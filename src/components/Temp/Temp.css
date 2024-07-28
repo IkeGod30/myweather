@@ -1,0 +1,7 @@
+.reading {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: orange;
+  padding: 40px;
+}

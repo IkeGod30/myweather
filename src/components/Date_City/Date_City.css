@@ -3,4 +3,10 @@
   width: 100%;
   text-align: center;
   color: white;
+  padding: 40px;
+  font-size: 2rem;
+}
+
+.date {
+  padding: 40px;
 }
