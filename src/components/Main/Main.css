@@ -1,0 +1,11 @@
+.main {
+  width: 700px;
+  background-color: rgb(24, 24, 61);
+  margin: auto;
+  border-radius: 15px;
+  height: 1000px;
+  /* display: flex;
+  justify-content: space-around; */
+}
+
+
