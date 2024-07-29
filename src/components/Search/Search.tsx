@@ -4,8 +4,8 @@ import './Search.css';
 function Search() {
   return (
     <div className='searchBar'>
-        <input type='text' placeholder='Type in a City name'/>
-        <button className='searchIcon'>Search</button>
+        <input className='searchInput' type='text' placeholder='Type in a city name'/>
+        <button className='searchIcon'><i className='fa fa-search' aria-hidden='true'></i></button>
       
     </div>
   )

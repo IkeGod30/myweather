@@ -7,13 +7,11 @@ function Description() {
         size:  {
             fontSize: '2rem',
             color: 'orange'
-
-        }
-            
+        }      
     }
   return (
     <div className='describe'>
-      <p style={style.size}>Description</p>
+      <p style={style.size}>Description: {info[0].description}</p>
     </div>
   )
 }

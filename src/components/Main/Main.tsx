@@ -7,6 +7,7 @@ import Description from '../Description/Description';
 import Temp from '../Temp/Temp';
 import Temperatures from '../Temperatures/Temperatures';
 import Search from '../Search/Search';
+import WeatherImage from '../WeatherImage/WeatherImage';
 
 
 function Main() {
@@ -15,6 +16,7 @@ function Main() {
         <Welcome />
         <Search />
         <Date_City />
+        <WeatherImage />
         <Description />
         <Temp />
         <Temperatures />

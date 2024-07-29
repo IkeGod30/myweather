@@ -1,0 +1,12 @@
+.weather_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.image {
+  justify-content: center;
+  align-items: center;
+}
