@@ -2,7 +2,7 @@ import React from 'react';
 import './Temperatures.css';
 import { info } from '../Data';
 
-function Temperatures() {
+const Temperatures: React.FC = ()=> {
   return (
     <div className='temps'>
         <h6>HIGHS: {info[0].high}</h6>

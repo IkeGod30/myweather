@@ -16,4 +16,4 @@ const Welcome : React.FC<{}> = ()=> {
 
 }
 
-export default Welcome
+export default Welcome;

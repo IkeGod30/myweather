@@ -2,7 +2,7 @@ import React from 'react';
 import './Description.css';
 import { info } from '../Data';
 
-function Description() {
+const Description: React.FC = ()=> {
     const style = {
         size:  {
             fontSize: '2rem',

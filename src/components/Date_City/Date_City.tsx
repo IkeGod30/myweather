@@ -2,7 +2,13 @@ import React from 'react';
 import './Date_City.css';
 import { info } from '../Data';
 
-const Date_City : React.FC<{}> = (props)=> {
+interface WeatherInfo {
+  city: any,
+}
+
+const Date_City: React.FC<WeatherInfo> = ({ city }) => {
+  
+  
   return (
     <div className='date_city'>
       <div className='date'>Date: {info[0].date}</div>
