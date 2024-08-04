@@ -3,7 +3,7 @@ import './Date_City.css';
 import { info } from '../Data';
 
 interface WeatherInfo {
-  city: any,
+  city: ()=>{},
 }
 
 const Date_City: React.FC<WeatherInfo> = ({ city }) => {

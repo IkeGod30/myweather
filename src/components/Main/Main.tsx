@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 
 import './Main.css';
 import Welcome from '../Welcome/Welcome';
@@ -12,8 +13,20 @@ import WeatherImage from '../WeatherImage/WeatherImage';
 
 import axios from 'axios';
 
+interface Mydata {
+    message: string;
+    data: any;
+    
+
+}
 
 
+
+
+// fetchData()
+// const infomation = await fetchData();
+
+// fetchData()
 // const getWeather = async()=> {
 //     try {
 //         const weatherDataFetch = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055', {
@@ -32,7 +45,20 @@ import axios from 'axios';
 // getWeather()
 
 const Main: React.FC = (props)=> {
+    // const [dati, setdati] = useState<Mydata[]>([])
+
+    // useEffect(()=> {
+    //     async function fetchData(): Promise<Mydata[]> {
+    //     const response = await axios.get<Mydata[]>('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055')
+    //     // setdati(response.data);
+    //     return response.data;
+    //     console.log(response.data);
+    // }
+    // fetchData();
+    // }, []);
    
+   
+    // console.log(response.data);
 
 //   export class TVShowAPI {
 //         static async fetchPopulars() {
@@ -51,7 +77,7 @@ const Main: React.FC = (props)=> {
     
 
 
-
+useEffect(()=> {
     const getWeather = async()=> {
         try {
             const weatherDataFetch = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055', {
@@ -61,21 +87,24 @@ const Main: React.FC = (props)=> {
             });
             const weatherDat = await weatherDataFetch.json();
         console.log(weatherDat)
-        console.log(weatherDat.list)
+        // console.log(weatherDat.list)
         }
         catch(error) {
             console.log(error)
         }
     }
-   getWeather()
+    getWeather()
+}, []);
+//    getWeather()
 
 
    
   return (
     <div className='main'>
+        {}
         <Welcome />
         <Search />
-        <Date_City city={getWeather}/>
+        {/* <Date_City city={getWeather}/> */}
         <WeatherImage />
         <Description />
         <Temp />
