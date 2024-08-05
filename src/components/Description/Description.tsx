@@ -16,4 +16,4 @@ const Description: React.FC = ()=> {
   )
 }
 
-export default Description
+export default Description;
