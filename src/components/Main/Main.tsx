@@ -104,7 +104,7 @@ useEffect(()=> {
         {}
         <Welcome />
         <Search />
-        {/* <Date_City city={getWeather}/> */}
+        <Date_City city={'Hi'}/>
         <WeatherImage />
         <Description />
         <Temp />
