@@ -44,9 +44,22 @@ interface Mydata {
 // }
 // getWeather()
 
-const Main: React.FC = (props)=> {
-    // const [dati, setdati] = useState<Mydata[]>([])
+const Main: React.FC = ()=> {
+    const [dati, setdati] = useState([])
 
+    interface Inf {
+        place: string
+    }
+
+    useEffect(()=> {
+        fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055')
+        .then(response => response.json()
+        .then(res => setdati(res)))
+        
+
+    }, []);
+
+    console.log(dati)
     // useEffect(()=> {
     //     async function fetchData(): Promise<Mydata[]> {
     //     const response = await axios.get<Mydata[]>('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055')
@@ -58,7 +71,7 @@ const Main: React.FC = (props)=> {
     // }, []);
    
    
-    // console.log(response.data);
+    // console.log(dati);
 
 //   export class TVShowAPI {
 //         static async fetchPopulars() {
@@ -77,35 +90,37 @@ const Main: React.FC = (props)=> {
     
 
 
-useEffect(()=> {
-    const getWeather = async()=> {
-        try {
-            const weatherDataFetch = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055', {
-                headers: {
-                    Accept: 'application/json'
-                }
-            });
-            const weatherDat = await weatherDataFetch.json();
-        console.log(weatherDat)
-        // console.log(weatherDat.list)
-        }
-        catch(error) {
-            console.log(error)
-        }
-    }
-    getWeather()
-}, []);
+// useEffect(()=> {
+//     const getWeather = async()=> {
+//         try {
+//             const weatherDataFetch = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=be69986a27fff2945a8def7bd4e36055', {
+//                 headers: {
+//                     Accept: 'application/json'
+//                 }
+//             });
+//             const weatherDat = await weatherDataFetch.json();
+//         console.log(weatherDat)
+//         // console.log(weatherDat.list)
+//         }
+//         catch(error) {
+//             console.log(error)
+//         }
+//     }
+//     getWeather()
+// }, []);
+
 //    getWeather()
 
 
    
   return (
     <div className='main'>
-        {}
+        {/* {dati.length > 0 ? dati.map((place: Inf ) => console.log(dati.place)) : ('Loading ...')} */}
+       {/* <h1> {dati.length}</h1> */}
         <Welcome />
         <Search />
-        <Date_City city={'Hi'}/>
-        <WeatherImage />
+        <Date_City city={dati}/>
+        <WeatherImage  />
         <Description />
         <Temp />
         <Temperatures />
